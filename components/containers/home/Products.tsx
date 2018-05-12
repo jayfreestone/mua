@@ -40,11 +40,11 @@ export default compose(
         }
       }
     `,
-    { name: 'products' },
+    { name: 'products-query' },
   ),
   mapProps(R.applySpec({
     products: R.pipe(
-      R.path(['products', 'shop', 'products', 'edges']),
+      R.path(['products-query', 'shop', 'products', 'edges']),
       R.map(R.prop('node')),
     ),
   })),
