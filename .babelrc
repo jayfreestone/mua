@@ -14,7 +14,8 @@
                     "hoc": "./components/hoc",
                     "apollo": "./apollo"
                 }
-            }
+            },
+            "babel-plugin-styled-components"
         ]
     ]
 }
