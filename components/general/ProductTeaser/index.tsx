@@ -6,7 +6,7 @@ const ProductTeaser: React.SFC<Props> = ({
   price,
 }) => (
   <article>
-    <Placeholder width={2} height={1} />
+    <Placeholder width={4} height={3} />
     <h3>{title}</h3>
     <span>{price}</span>
   </article>

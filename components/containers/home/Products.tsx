@@ -4,16 +4,21 @@ import gql from 'graphql-tag';
 import { compose, mapProps } from 'recompose';
 import { graphql } from 'react-apollo';
 import ProductTeaser from 'components/general/ProductTeaser';
+import ProductGrid from 'components/general/ProductGrid';
+import Container from 'components/general/Container';
+import withLoadingState from 'components/hoc/withLoadingState';
 
 const Products = ({ products }) => (
-  <div>
-    {products.map(({ title, price }) => (
-      <ProductTeaser
-        title={title}
-        price={price}
-      />
-    ))}
-  </div>
+  <Container>
+    <ProductGrid>
+      {products.map(({ title, price }) => (
+        <ProductTeaser
+          title={title}
+          price={price}
+        />
+      ))}
+    </ProductGrid>
+  </Container>
 );
 
 Products.defaultProps = {
@@ -66,9 +71,14 @@ export default compose(
     `,
     { name: 'products-query' },
   ),
+  withLoadingState({
+    name: 'products-query',
+    renderLoading: () => <div>Loading...</div>,
+    renderError: () => <div>An error!</div>,
+  }),
   mapProps(R.applySpec({
     products: R.pipe(
-      R.path(['products-query', 'shop', 'products', 'edges']),
+      R.pathOr([], ['products-query', 'shop', 'products', 'edges']),
       R.map(
         R.pipe(
           R.prop('node'),

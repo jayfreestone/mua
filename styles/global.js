@@ -6,6 +6,18 @@ import theme from 'styles/theme';
  * cannot access it via provider in injectGlobal.
  */
 injectGlobal`
+  ::root {
+    --base-spacing: 1em;
+
+    @media (min-width: 40em) {
+      --base-spacing: 1.5em;
+    }
+
+    @media (min-width: 60em) {
+      --base-spacing: 1.8em;
+    }
+  }
+
   body {
     font-family: 'grad', serif;
     color: ${theme.base};
