@@ -12,7 +12,8 @@
                 "alias": {
                     "components": "./components",
                     "hoc": "./components/hoc",
-                    "apollo": "./apollo"
+                    "apollo": "./apollo",
+                    "styles": "./styles"
                 }
             },
             "babel-plugin-styled-components"

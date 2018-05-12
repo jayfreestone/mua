@@ -1,12 +1,12 @@
 import React from 'react';
 import withData from 'hoc/withData';
+import Page from 'components/general/Page';
 import Products from 'components/containers/home/Products';
 
 const Home = () => (
-  <div>
-    <h1>The Moon up Above</h1>
+  <Page>
     <Products />
-  </div>
+  </Page>
 );
 
 export default withData(Home);

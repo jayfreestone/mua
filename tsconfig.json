@@ -23,6 +23,7 @@
       "components/*": ["components/*"],
       "hoc/*": ["components/hoc/*"],
       "apollo/*": ["apollo/*"],
+      "styles/*": ["styles/*"],
     }
   }
 }
