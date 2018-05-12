@@ -4,6 +4,10 @@
     ],
     "plugins": [
         [
+            "babel-plugin-styled-components",
+            { "ssr": true }
+        ],
+        [
             "module-resolver",
             {
                 "root": [
@@ -15,8 +19,7 @@
                     "apollo": "./apollo",
                     "styles": "./styles"
                 }
-            },
-            "babel-plugin-styled-components"
+            }
         ]
     ]
 }
